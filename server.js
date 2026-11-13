@@ -19,11 +19,13 @@ app.get("/ping", (req, res) => {
 
 app.get("/citations", (req, res) => {
   // TODO : renvoyer le tableau de citations avec res.json().
+  res.status(200).json(citations)
   res.status(501).json({ message: "À compléter" });
 });
 
 app.use((req, res) => {
   // TODO : renvoyer un statut 404 et le message « Route introuvable » en JSON.
+  res.status(404).json({ message: "route introuvable" });
   res.status(501).json({ message: "À compléter" });
 });
 
